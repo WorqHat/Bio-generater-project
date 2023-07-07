@@ -46,18 +46,21 @@ const MyPage = () => {
 
   const handleGenerateBioClick = async () => {
     let question = '';
-
+  
     // Create the question based on the input values
     if (platformValue === 'Linkedin') {
       question = `Generate a ${vibeValue.toLowerCase()} LinkedIn bio: ${textAreaValue}`;
     } else if (platformValue === 'Twitter') {
       question = `Create a ${vibeValue.toLowerCase()} Twitter bio: ${textAreaValue}`;
     }
-
+  
+    setGeneratedBio('Generating your bio, please wait!!!');
+  
     const responseData = await fetchBioData(question, true, {}, false);
-
+  
     setGeneratedBio(responseData?.content || '');
   };
+  
 
   return (
     <Layout>
