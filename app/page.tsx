@@ -74,7 +74,7 @@ const MyPage = () => {
         </div>
       <div className="container">
 
-        <div style={{marginBottom: "-2%", marginTop: "1%" }}>
+        <div style={{marginBottom: "-3%", marginTop: "1%" }}>
           <h1>Generate your BIO using Worqhat API's.</h1>
         </div>
 
