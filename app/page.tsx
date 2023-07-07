@@ -61,7 +61,7 @@ const MyPage = () => {
 
   return (
     <Layout>
-      <div className='logo' style={{ display: 'right', justifyContent: 'flex-start', alignItems: 'initial', marginLeft: '2%', marginTop: "2%", fontSize: "medium" }}>
+      <div className='logo' style={{ display: 'right', justifyContent: 'flex-start', alignItems: 'initial', marginLeft: '2%', marginTop: "2.5%", fontSize: "medium" }}>
           <Image src="/logo.png" alt="Logo" width={100} height={50} />
 
           <div className='social-icons' style={{ display: 'flex', justifyContent: 'flex-end', margin: '10px', marginTop: "-60px", fontSize: "medium" }}>
@@ -75,7 +75,7 @@ const MyPage = () => {
       <div className="container">
 
         <div style={{marginBottom: "-2%", marginTop: "1%" }}>
-          <h1>Generate your BIO using Worqbot.</h1>
+          <h1>Generate your BIO using Worqhat API's.</h1>
         </div>
 
         <div className="icon-heading">

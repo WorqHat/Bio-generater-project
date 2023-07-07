@@ -17,9 +17,9 @@
 }
 
 body {
-  background-image: linear-gradient(135deg, #ff6b6b, #c738d8, #4158d0);
-  background-size: cover;
-  background-repeat: no-repeat;
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to right, #0251fc, #0251fc);
+  
 }
 
 h1 {
