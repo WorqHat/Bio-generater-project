@@ -23,7 +23,7 @@ body {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: bold;
 }
 
@@ -58,8 +58,8 @@ h1 {
 
 .my-textarea {
   padding: 15px;
-  margin-top: 30px;
-  margin-bottom: 20px;
+  margin-top: -10px;
+  margin-bottom: -15px;
   width: 100%;
   font-size: medium;
   color: black;
@@ -73,7 +73,7 @@ h1 {
   padding: 10px;
   border: 1px solid #000;
   border-radius: 5px;
-  margin-top: 10px;
+  margin-top: -10px;
   width: 100%;
 }
 
@@ -82,7 +82,7 @@ h1 {
   padding: 10px;
   border: 1px solid #000;
   border-radius: 5px;
-  margin-top: 10px;
+  margin-top: -10px;
   width: 100%;
 }
 
