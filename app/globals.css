@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  background-image: linear-gradient(135deg, #ff6b6b, #c738d8, #4158d0);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.steps {
+  margin-top: 30px;
+  text-align: left;
+  font-weight: bold;
+  padding-bottom: 26px;
+}
+
+.icon-heading {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.icon-heading h2 {
+  margin-left: 20px;
+}
+
+.container {
+  margin: auto;
+  width: 86%;
+  text-align: center;
+  margin-top: 5%;
+  padding: 45px;
+  border-radius: 5px;
+  color: black;
+  background-color: white;
+  margin-bottom: 70px;
+}
+
+.my-textarea {
+  padding: 15px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  width: 100%;
+  font-size: medium;
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.menuvibe {
+  background-color: white;
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.menuplatform {
+  background-color: white;
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.stylesoption {
+  font-size: 1rem;
+  color: black;
+  background-color: rgb(234, 234, 234);
+  border-radius: 5px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.generatebtn {
+  padding: 10px;
+}
+
+.generatebtn {
+  margin-top: 70px;
+  padding: 12px 24px;
+  width: 100%;
+  border-radius: 15px;
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.3s ease;
+
+  /* Hover effect */
+  cursor: pointer;
+}
+
+.generatebtn:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.generated-bio-container{
+  background-color:#fff;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  margin: 20px 0;
+}
+.generated-bio-heading{
+  font-size: 24px; font-weight: bold;margin-bottom: 10px;
+}
+.generated-bio{
+    font-size: 16px;
+}
