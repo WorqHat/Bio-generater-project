@@ -2,8 +2,14 @@
 import { IconSquareRoundedNumber1Filled, IconSquareRoundedNumber2Filled, IconSquareRoundedNumber3Filled } from "@tabler/icons-react";
 import React, { useEffect, useState } from 'react';
 import Layout from './layout';
-
-
+import Image from 'next/image';
+const socialMediaLinks = [
+  { name: 'Instagram', icon: '/instagram-icon.svg', url: 'https://instagram.com/worqhat' },
+  { name: 'Discord', icon: '/discord-icon.svg', url: 'https://discord.gg/KHh9mguKBx' },
+  { name: 'LinkedIn', icon: '/linkedin-icon.svg', url: 'https://linkedin.com/company/worqhat' },
+  { name: 'Twitter', icon: '/twitter-icon.svg', url: 'https://twitter.com/worqhat' },
+  { name: 'GitHub', icon: '/github-icon.svg', url: 'https://github.com/worqhat' },
+];
 async function fetchBioData(question: string,
   preserveHistory: boolean,
   historyObject: any,
@@ -56,6 +62,17 @@ const MyPage = () => {
   return (
     <Layout>
       <div className="container">
+      <div className='logo' style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'initial', marginLeft: '10px', marginTop: "30px" }}>
+          <Image src="/logo.png" alt="Logo" width={100} height={50} />
+
+          <div className='social-icons' style={{ display: 'flex', justifyContent: 'flex-end', margin: '10px', marginTop: "-30px" }}>
+            {socialMediaLinks.map((link, index) => (
+              <a key={index} href={link.url} target="_blank" rel="noopener noreferrer" style={{ margin: '0 5px' }}>
+                <Image src={link.icon} alt={link.name} width={20} height={20} />
+              </a>
+            ))}
+          </div>
+        </div>
         <div>
           <h1>Generate your next Twitter bio using Chatgpt</h1>
         </div>
