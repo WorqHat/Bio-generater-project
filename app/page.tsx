@@ -3,6 +3,8 @@ import { IconSquareRoundedNumber1Filled, IconSquareRoundedNumber2Filled, IconSqu
 import React, { useEffect, useState } from 'react';
 import Layout from './layout';
 import Image from 'next/image';
+import { IconCopy } from "@tabler/icons-react";
+
 const socialMediaLinks = [
   { name: 'Instagram', icon: '/instagram-icon.svg', url: 'https://instagram.com/worqhat' },
   { name: 'Discord', icon: '/discord-icon.svg', url: 'https://discord.gg/KHh9mguKBx' },
@@ -43,11 +45,19 @@ const MyPage = () => {
   const [vibeValue, setVibeValue] = useState('');
   const [platformValue, setPlatformValue] = useState('');
   const [generatedBio, setGeneratedBio] = useState('');
+  const [bioCopied, setBioCopied] = useState(false);
+  
+  const handleCopyBio = () => {
+    navigator.clipboard.writeText(generatedBio);
+    setBioCopied(true);
+    setTimeout(() => {
+      setBioCopied(false);
+    }, 2000);
+  };
 
   const handleGenerateBioClick = async () => {
     let question = '';
   
-    // Create the question based on the input values
     if (platformValue === 'Linkedin') {
       question = `Generate a ${vibeValue.toLowerCase()} LinkedIn bio: ${textAreaValue}`;
     } else if (platformValue === 'Twitter') {
@@ -128,15 +138,24 @@ const MyPage = () => {
         <button className="generatebtn" style={{ marginTop: "2%", marginBottom: "-.05%"}} onClick={handleGenerateBioClick}>
           Generate your bio
         </button>
+
         {generatedBio && (
-          <div 
-          className="generated-bio-container">
+        <div className="generated-bio-container">
+          <div className="bio-header">
             <h2 className="generated-bio-heading">Your Generated Bio</h2>
-            <p className="generated-bio">
-              {generatedBio}
-            </p>
+            <button className="copy-icon" style={{display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-end', width: '100%'  }} onClick={handleCopyBio}>
+            {bioCopied && (
+               <div className="bio-copied-message" style={{ marginLeft: '15px', border: '2px solid black', borderRadius: '10px', padding: '2px', marginTop: "-0.7%" }}>BIO Copied!!!</div>
+            )}
+              <IconCopy size={18} />
+            </button>
           </div>
-        )}
+          <p className="generated-bio">{generatedBio}</p>
+        </div>
+      )}
+
+
+
 
       </div>
       <div className='footer' style={{ textAlign: 'center', marginTop: '-45px', left: '0', bottom: '10px', width: '100%' }}>
