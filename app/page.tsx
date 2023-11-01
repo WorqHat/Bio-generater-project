@@ -17,16 +17,13 @@ async function fetchBioData(question: string,
   historyObject: any,
   randomness: boolean) {
   const API_ENDPOINT = 'https://api.worqhat.com/api/ai/content/v2';
-  const API_KEY = 'U2FsdGVkX187FPQxzgbmIVjXh3O1+xyor30KWVrIBMuFEqGv8NfzXPjE53e3Ju+T';
-  const ORG_KEY = 'U2FsdGVkX19lq3bhhF5TRouMiyL2HvEBD2V5j5nNl6dNL9JWPbsXW0rqlzssW8GieFki6oRVDKTb/z01Hc7m+Q==';
-
+  const BEARER_TOKEN = `Bearer ${process.env.WORQHAT_API_KEY}`;
   const requestOptions = {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'x-api-key': API_KEY,
-      'x-org-key': ORG_KEY,
-    },
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': BEARER_TOKEN,
+        },
     body: JSON.stringify({
       question,
       preserve_history: preserveHistory,
