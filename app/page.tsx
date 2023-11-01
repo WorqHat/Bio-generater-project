@@ -17,7 +17,7 @@ async function fetchBioData(question: string,
   historyObject: any,
   randomness: boolean) {
   const API_ENDPOINT = 'https://api.worqhat.com/api/ai/content/v2';
-  const BEARER_TOKEN = `Bearer sk-815f9a4836b44791b0b44ac4f4212842`;
+  const BEARER_TOKEN = `Bearer ${process.env.WORQHAT_API_KEY}`;
   const requestOptions = {
     method: 'POST',
         headers: {
