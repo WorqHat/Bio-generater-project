@@ -69,21 +69,47 @@ const MyPage = () => {
 
   return (
     <Layout>
-      <div className='logo' style={{ display: 'right', justifyContent: 'flex-start', alignItems: 'initial', marginLeft: '2%', marginTop: "2.5%", fontSize: "medium" }}>
-          <Image src="/logo.png" alt="Logo" width={100} height={50} />
+      <div
+        className="logo"
+        style={{
+          display: "right",
+          justifyContent: "flex-start",
+          alignItems: "initial",
+          marginLeft: "2%",
+          marginTop: "2.5%",
+          fontSize: "medium",
+        }}
+      >
+        <Image src="/logo.png" alt="Logo" width={100} height={50} />
 
-          <div className='social-icons' style={{ display: 'flex', justifyContent: 'flex-end', margin: '10px', marginTop: "-60px", fontSize: "medium" }}>
-            {socialMediaLinks.map((link, index) => (
-              <a key={index} href={link.url} target="_blank" rel="noopener noreferrer" style={{ margin: '0 5px' }}>
-                <Image src={link.icon} alt={link.name} width={20} height={20} />
-              </a>
-            ))}
-          </div>
+        <div
+          className="social-icons"
+          style={{
+            display: "flex",
+            justifyContent: "flex-end",
+            margin: "10px",
+            marginTop: "-60px",
+            fontSize: "medium",
+          }}
+        >
+          {socialMediaLinks.map((link, index) => (
+            <a
+              key={index}
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ margin: "0 5px" }}
+            >
+              <Image src={link.icon} alt={link.name} width={20} height={20} />
+            </a>
+          ))}
         </div>
+      </div>
       <div className="container">
-
-        <div style={{marginBottom: "-3%", marginTop: "1%" }}>
-          <h1>Generate your BIO using Worqhat API's.</h1>
+        <div style={{ marginBottom: "-3%", marginTop: "1%" }}>
+          <h1 style={{ marginTop: "-3%" }}>
+            Generate your BIO using Worqhat API's.
+          </h1>
         </div>
 
         <div className="icon-heading">
@@ -130,32 +156,72 @@ const MyPage = () => {
           </select>
         </div>
 
-        <button className="generatebtn" style={{ marginTop: "2%", marginBottom: "-.05%"}} onClick={handleGenerateBioClick}>
+        <button
+          className="generatebtn"
+          style={{ marginTop: "2%", marginBottom: "-.05%" }}
+          onClick={handleGenerateBioClick}
+        >
           Generate your bio
         </button>
 
         {generatedBio && (
-        <div className="generated-bio-container">
-          <div className="bio-header">
-            <h2 className="generated-bio-heading">Your Generated Bio</h2>
-            <button className="copy-icon" style={{display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-end', width: '100%'  }} onClick={handleCopyBio}>
-            {bioCopied && (
-               <div className="bio-copied-message" style={{ marginLeft: '15px', border: '2px solid black', borderRadius: '10px', padding: '2px', marginTop: "-0.7%" }}>BIO Copied!!!</div>
-            )}
-              <IconCopy size={18} />
-            </button>
+          <div className="generated-bio-container">
+            <div className="bio-header">
+              <h2 className="generated-bio-heading">Your Generated Bio</h2>
+              <button
+                className="copy-icon"
+                style={{
+                  display: "flex",
+                  alignItems: "flex-start",
+                  justifyContent: "flex-end",
+                  width: "100%",
+                }}
+                onClick={handleCopyBio}
+              >
+                {bioCopied && (
+                  <div
+                    className="bio-copied-message"
+                    style={{
+                      marginLeft: "15px",
+                      border: "2px solid black",
+                      borderRadius: "10px",
+                      padding: "2px",
+                      marginTop: "-0.7%",
+                    }}
+                  >
+                    BIO Copied!!!
+                  </div>
+                )}
+                <IconCopy size={18} />
+              </button>
+            </div>
+            <p className="generated-bio">{generatedBio}</p>
           </div>
-          <p className="generated-bio">{generatedBio}</p>
-        </div>
-      )}
-
-
-
-
+        )}
       </div>
-      <div className='footer' style={{ textAlign: 'center', marginTop: '-45px', left: '0', bottom: '10px', width: '100%' }}>
-          <p>&copy; 2023 Worqhat. All rights reserved.</p>
-        </div>
+      <div
+        className="footer"
+        style={{
+          textAlign: "center",
+          marginTop: "-45px",
+          left: "0",
+          bottom: "10px",
+          width: "100%",
+        }}
+      >
+        <p>
+          &copy; 2023{" "}
+          <a
+            href="https://www.worqhat.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: "lightblue" }}
+          >
+            Worqhat
+          </a>
+          . All rights reserved.
+        </p>
+      </div>
     </Layout>
   );
 };
